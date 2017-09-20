@@ -10,6 +10,16 @@
 
 	Make the Title twice as large as the body text, bold, and give it some nice margin.
 */
+body {
+	font-family: 'Proza Libre', sans-serif;
+};
+
+h1 {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 30px 0;
+};
+
 
 /*-------- Main Styles --------*/
 
@@ -20,6 +30,23 @@
 
 	Every container, form, input, and button should have rounded corners.
 */
+#main {
+	width: 100%;
+};
+
+.form {
+	float: left;
+	max-width: 500px;
+};
+
+.results {
+	float: right;
+}
+
+input, textarea {
+	border-radius: 10px;
+}
+
 
 /*-------- Form Styles --------*/
 

@@ -3,6 +3,7 @@
 <head>
 	<title>CSS HTML Forms Lab</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 <body>
 	<section id="main">
@@ -102,17 +103,42 @@
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
 
 			// JS Native:
-			// var results = document.createElement('section');
-			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
-			// results.className = 'container results';
-			// main.appendChild(results);
-		};
+			var results = document.createElement('section');
+			results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
+			results.className = 'container results';
+			main.appendChild(results);
+		}
 
 		$("form").on("submit", function(event){
+			event.preventDefault();
+			makeResults();
+
+		
 
 		    // Stop the form from submitting
 
 	    	// Run the 'makeResults' function seen above
+		}
+
+		var formName = $('input#name').val();
+		var formVerb1 = $('select#verb-1').val();
+		var formMission = $('textarea#mission').val();
+		var formSentiment = $('input[name=sentiment]:checked').val();
+		var formNoun = $('input#noun-1').val();
+		var formAdjective = $('input[name=adjective-2]:checked').val();
+		var formNoun2 = $('input#noun-2').val();
+
+		$('results').append('<p>').append("Once upon a time there was a Developer named " + formName + ".");
+
+		$('results').append('<p>').append(formName + " came to General Assembly to " + formVerb1 + " the great mountain of programming knowledge.");
+
+		$('results').append('<p>').append(formName + " came to General Assembly to " + formVerb1 + " the great mountain of programming knowledge.");
+
+		$('results').append('<p>').append(formMission + ", " + formName + " shouted.");
+
+		$('results').append('<p>').append("Though " + formSentiment + formName + " was able to overcome all obstacles with the power of their " + formNoun);
+
+		$('results').append('<p>').append("In the end, their success can be contributed entirely to their " + formAdjective + formNoun2);
 
 	    	/*
 			
