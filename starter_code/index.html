@@ -103,59 +103,44 @@
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
 
 			// JS Native:
-			var results = document.createElement('section');
-			results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
-			results.className = 'container results';
-			main.appendChild(results);
+			// var results = document.createElement('section');
+			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
+			// results.className = 'container results';
+			// main.appendChild(results);
 		}
 
 		$("form").on("submit", function(event){
 			event.preventDefault();
+		
 			makeResults();
 
-		
-
-		    // Stop the form from submitting
-
-	    	// Run the 'makeResults' function seen above
-		}
-
-		var formName = $('input#name').val();
-		var formVerb1 = $('select#verb-1').val();
-		var formMission = $('textarea#mission').val();
-		var formSentiment = $('input[name=sentiment]:checked').val();
-		var formNoun = $('input#noun-1').val();
-		var formAdjective = $('input[name=adjective-2]:checked').val();
-		var formNoun2 = $('input#noun-2').val();
-
-		$('results').append('<p>').append("Once upon a time there was a Developer named " + formName + ".");
-
-		$('results').append('<p>').append(formName + " came to General Assembly to " + formVerb1 + " the great mountain of programming knowledge.");
-
-		$('results').append('<p>').append(formName + " came to General Assembly to " + formVerb1 + " the great mountain of programming knowledge.");
-
-		$('results').append('<p>').append(formMission + ", " + formName + " shouted.");
-
-		$('results').append('<p>').append("Though " + formSentiment + formName + " was able to overcome all obstacles with the power of their " + formNoun);
-
-		$('results').append('<p>').append("In the end, their success can be contributed entirely to their " + formAdjective + formNoun2);
-
-	    	/*
+			var formName = $('#name').val();
+			var formVerb1 = $('#verb-1').val();
+			var formMission = $('#mission').val();
+			var formSentiment = $('input[name=sentiment]:checked').val();
+			var formNoun = $('#noun-1').val();
+			var formAdjective = $('input[name=adjective-2]:checked').val();
+			var formNoun2 = $('#noun-2').val();
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+			//	For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
 
-				"Once upon a time there was a Developer named NAME."
+			$("<p>Once upong a time there was a Developer named " + formName + ".</p>").appendTo('.results');
+			//	"Once upon a time there was a Developer named NAME."
 
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
+			$("<p>" + formName + " came to General Assembly to " + formVerb1 + " the great mountain of programming knowledge.</p>").appendTo('.results');
+			//	"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 
-				""MISSION", NAME shouted."
-	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+			$("<p>" + formMission + ", " + formName + " shouted.</p>").appendTo('.results');
+			//	""MISSION", NAME shouted."
 
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+			$("<p>Though " + formSentiment + ", " + formName + " was able to overcome all obstacles with the power of their " + formNoun + ".</p>").appendTo('.results');
+			//	"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
 
-	    	*/ 
-		});
+			$("<p>In the end, their success can be contributed entirely to their " + formAdjective + " " + formNoun2 + ".</p>").appendTo('.results');
+			//	"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+
+		}); 	
+		
 	</script>
 
 </body>
